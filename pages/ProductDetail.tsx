@@ -137,8 +137,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ onOpenModal }) => {
                 <div className="flex border-b border-gray-100 overflow-x-auto scrollbar-hide">
                     {[
                         { id: 'desc', label: 'Description & Features' },
-                        { id: 'specs', label: 'Technical Specs' },
-                        { id: 'apps', label: 'Applications' }
+                        // { id: 'specs', label: 'Technical Specs' },
+                        // { id: 'apps', label: 'Applications' }
                     ].map(tab => (
                         <button 
                             key={tab.id}
