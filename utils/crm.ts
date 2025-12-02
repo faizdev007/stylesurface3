@@ -7,7 +7,8 @@ import { supabase } from './supabaseClient';
  * 1. Zapier Webhook (Legacy/Direct)
  * 2. Zoho CRM (Via Supabase Edge Function to protect credentials)
  */
-export const syncLeadToCRM = async (leadData: any) => {
+export const syncLeadToCRM = async (leadData: any) => { 
+    console.log("Starting CRM Sync Process...",leadData);
   try {
     const settings = await CMS.getSettings();
     const integrations = settings.integrations;

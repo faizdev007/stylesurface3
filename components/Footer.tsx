@@ -36,7 +36,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
                <img 
                   src="https://stylesurface-in.vercel.app/logo.webp" 
                   alt={settings.siteName} 
-                  className="h-10 w-auto object-contain brightness-0 invert" 
+                  className="h-10 w-auto object-contain" 
                 />
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
