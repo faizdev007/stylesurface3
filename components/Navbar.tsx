@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
   return (
     <>
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'bg-black/90 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-black/70 py-5'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -72,8 +72,8 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href={`tel:${settings?.phone}`} className="flex items-center gap-2 text-slate-700 hover:text-brand-700 font-bold transition-colors text-sm">
-              <Phone className="w-4 h-4 text-brand-500" />
+            <a href={`tel:${settings?.phone}`} className="flex items-center gap-2 text-white hover:text-brand-700 font-bold transition-colors text-sm">
+              <Phone className="w-4 h-4 text-white" />
               <span>{settings?.phone}</span>
             </a>
             <Button variant="primary" size="sm" onClick={onOpenModal} className="shadow-brand-500/20">
