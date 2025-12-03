@@ -43,8 +43,21 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
         
         // 2. Trigger Integrations (CRM & Email)
         if (data) {
+            const response = await fetch("/api/sendToZoho", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              full_name: formState.fullName,
+              phone: formState.phone,
+              user_type: formState.userType,
+              requirement: formState.requirement
+            }),
+          });
+
+          const result = await response.json();
+          console.log(result);
             // Push to Zoho via Zapier
-            syncLeadToCRM(data);
+            // syncLeadToCRM(data);
             
             // Send Notification Email
             sendEmailNotification(data);
