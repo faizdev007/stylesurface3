@@ -9,12 +9,6 @@ export default async function handler(req, res) {
         // Values from environment variables
         const { ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET, ZOHO_REFRESH_TOKEN } = process.env;
 
-        console.log({
-            ZOHO_CLIENT_ID,
-            ZOHO_CLIENT_SECRET,
-            ZOHO_REFRESH_TOKEN,
-        }); 
-        return;
         // Get Zoho access token
         const tokenRes = await axios.post(
             `https://accounts.zoho.in/oauth/v2/token?refresh_token=${ZOHO_REFRESH_TOKEN}&client_id=${ZOHO_CLIENT_ID}&client_secret=${ZOHO_CLIENT_SECRET}&grant_type=refresh_token`
