@@ -364,7 +364,7 @@ const mapProductToDB = (product: Product) => ({
 export const CMS = {
   // --- Pages ---
   getPages: async (): Promise<CMSPage[]> => {
-    const { data, error } = await supabase.from('cms_pages').select('*').order('created_at', { ascending: true });
+    const { data, error } = await supabase.from('cms_pages').select('*').order('updated_at', { ascending: true });
     if (error || !data) return [];
     return data.map(mapPageFromDB);
   },
