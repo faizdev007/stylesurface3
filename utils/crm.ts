@@ -25,7 +25,7 @@ export const syncLeadToCRM = async (leadData: any) => {
         // Pass 'config' so the edge function has credentials to generate access tokens
         const { data, error } = await supabase.functions.invoke('sync-zoho', {
             body: {
-                action: 'exchange_token',
+                action: 'sync_lead',
                 lead: leadData,
                 config: integrations.zoho
             }
