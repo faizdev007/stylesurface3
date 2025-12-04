@@ -25,10 +25,11 @@ export default async function handler(req, res) {
             {
                 data: [
                     {
+                        First_Name: formData.name,
                         Full_Name: formData.name,
                         Email: formData.email,
                         Phone: formData.phone,
-                        Message: formData.message,
+                        Description: formData.message,
                     },
                 ],
             },
