@@ -23,7 +23,6 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    console.log(e.target.name, e.target.value);
     if(e.target.name === 'phone') {
         // Basic phone number validation (only digits and +)
         const phoneValue = e.target.value;
@@ -137,11 +136,11 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
             disabled={isSubmitting}
             >
             <option value="" disabled>Select your role</option>
-            <option value="Interior Designer">I am an Interior Designer</option>
-            <option value="Retailer">I am a Retailer</option>
-            <option value="Wholesaler">I am a Wholesaler</option>
-            <option value="Dealer">I am a Dealer</option>
-            <option value="Personal Use">I want for personal use</option>
+            <option value="Interior Designer">Interior Designer</option>
+            <option value="Retailer">Retailer</option>
+            <option value="Wholesaler">Wholesaler</option>
+            <option value="Dealer">Dealer</option>
+            <option value="Personal Use">personal user</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
             <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
