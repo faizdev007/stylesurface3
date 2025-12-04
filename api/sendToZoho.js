@@ -25,7 +25,8 @@ export default async function handler(req, res) {
             {
                 data: [
                     {
-                        First_Name: formData.name,
+                        First_Name: formData.name.split(" ")[0],
+                        Last_Name: formData.name.split(" ")[1],
                         Full_Name: formData.name,
                         Email: formData.email,
                         Phone: formData.phone,
