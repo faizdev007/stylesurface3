@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
         // Get Zoho access token
         const tokenRes = await axios.post(
-            `https://accounts.zoho.in/oauth/v2/token?refresh_token=${ZOHO_REFRESH_TOKEN}&client_id=${ZOHO_CLIENT_ID}&client_secret=${ZOHO_CLIENT_SECRET}&grant_type=refresh_token`
+            `https://accounts.zoho.com/oauth/v2/token?refresh_token=${ZOHO_REFRESH_TOKEN}&client_id=${ZOHO_CLIENT_ID}&client_secret=${ZOHO_CLIENT_SECRET}&grant_type=refresh_token`
         );
 
         const accessToken = tokenRes.data.access_token;
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
         // Create Zoho CRM Lead
         const zohoRes = await axios.post(
-            "https://www.zohoapis.in/crm/v2/Leads",
+            "https://www.zohoapis.com/crm/v2/Leads",
             {
                 data: [
                     {
