@@ -23,6 +23,15 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    console.log(e.target.name, e.target.value);
+    if(e.target.name === 'phone') {
+        // Basic phone number validation (only digits and +)
+        const phoneValue = e.target.value;
+        const phoneRegex = /^[+\d]*$/;
+        if (!phoneRegex.test(phoneValue)) {
+            return; // Ignore invalid input
+        }
+    }
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
@@ -43,19 +52,19 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
         
         // 2. Trigger Integrations (CRM & Email)
         if (data) {
-            const response = await fetch("/api/sendToZoho", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              full_name: formState.fullName,
-              phone: formState.phone,
-              user_type: formState.userType,
-              requirement: formState.requirement
-            }),
-          });
+              const response = await fetch("/api/sendToZoho", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  full_name: formState.fullName,
+                  phone: formState.phone,
+                  user_type: formState.userType,
+                  requirement: formState.requirement
+                }),
+              });
 
-          const result = await response.json();
-          console.log(result);
+            const result = await response.json();
+            console.log(result);
             // Push to Zoho via Zapier
             // syncLeadToCRM(data);
             
@@ -109,6 +118,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
           required 
           className={inputClasses}
           placeholder="+91 98765 43210"
+          maxLength={15}
           value={formState.phone}
           onChange={handleChange}
           disabled={isSubmitting}
