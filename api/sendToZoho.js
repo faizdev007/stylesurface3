@@ -25,8 +25,8 @@ export default async function handler(req, res) {
             {
                 data: [
                     {
-                        First_Name: formData.name.split(" ")[0],
-                        Last_Name: formData.name.split(" ")[1],
+                        First_Name: formData.name,
+                        Last_Name: formData.name,
                         Full_Name: formData.name,
                         Email: formData.email,
                         Phone: formData.phone,
@@ -44,6 +44,6 @@ export default async function handler(req, res) {
         return res.status(200).json({ success: true, data: zohoRes.data });
     } catch (err) {
         console.error(err.response?.data);
-        return res.status(404).json({ error: true, details: err.response?.data });
+        return res.status(500).json({ error: true, details: err.response?.data });
     }
 }
