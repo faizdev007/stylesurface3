@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
   if (!settings) return null;
 
   return (
-    <footer className="bg-industrial-dark text-white pt-24 pb-12 border-t border-brand-900">
+    <footer className="bg-black text-white pt-24 pb-12 border-t border-brand-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           
@@ -36,7 +36,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
                <img 
                   src="/logo.webp"
                   alt={settings.siteName} 
-                  className="h-10 w-auto object-contain" 
+                  className="h-18 w-auto object-contain" 
                 />
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
