@@ -50,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <img 
-              src="https://stylesurface-in.vercel.app/logo.webp" 
+              src="/logo.webp" 
               alt="StylenSurface" 
               className="h-10 md:h-12 w-auto object-contain"
             />

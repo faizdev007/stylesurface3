@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
           <div className="space-y-8">
             <div className="flex items-center gap-2.5">
                <img 
-                  src="https://stylesurface-in.vercel.app/logo.webp" 
+                  src="/logo.webp"
                   alt={settings.siteName} 
                   className="h-10 w-auto object-contain" 
                 />
